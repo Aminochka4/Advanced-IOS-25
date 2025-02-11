@@ -3,28 +3,32 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		130A225F2D54EDDA00941264 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130A225E2D54EDDA00941264 /* AppDelegate.swift */; };
 		130A22612D54EDDA00941264 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130A22602D54EDDA00941264 /* SceneDelegate.swift */; };
-		130A22632D54EDDA00941264 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130A22622D54EDDA00941264 /* ViewController.swift */; };
 		130A22662D54EDDA00941264 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 130A22652D54EDDA00941264 /* Base */; };
 		130A22682D54EDDC00941264 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 130A22672D54EDDC00941264 /* Assets.xcassets */; };
 		130A226B2D54EDDC00941264 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 130A226A2D54EDDC00941264 /* Base */; };
+		13C408C32D5B62B600240275 /* InterestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C408C22D5B62AA00240275 /* InterestCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		130A225B2D54EDDA00941264 /* About me.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "About me.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		130A225E2D54EDDA00941264 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		130A22602D54EDDA00941264 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		130A22622D54EDDA00941264 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		130A22652D54EDDA00941264 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		130A22672D54EDDC00941264 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		130A226A2D54EDDC00941264 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		130A226C2D54EDDC00941264 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		13C408C22D5B62AA00240275 /* InterestCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		13C408C12D5B629900240275 /* ViewController */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = ViewController; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		130A22582D54EDDA00941264 /* Frameworks */ = {
@@ -56,9 +60,10 @@
 		130A225D2D54EDDA00941264 /* About me */ = {
 			isa = PBXGroup;
 			children = (
+				13C408C22D5B62AA00240275 /* InterestCell.swift */,
+				13C408C12D5B629900240275 /* ViewController */,
 				130A225E2D54EDDA00941264 /* AppDelegate.swift */,
 				130A22602D54EDDA00941264 /* SceneDelegate.swift */,
-				130A22622D54EDDA00941264 /* ViewController.swift */,
 				130A22642D54EDDA00941264 /* Main.storyboard */,
 				130A22672D54EDDC00941264 /* Assets.xcassets */,
 				130A22692D54EDDC00941264 /* LaunchScreen.storyboard */,
@@ -81,6 +86,9 @@
 			buildRules = (
 			);
 			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				13C408C12D5B629900240275 /* ViewController */,
 			);
 			name = "About me";
 			productName = "About me";
@@ -138,8 +146,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				130A22632D54EDDA00941264 /* ViewController.swift in Sources */,
 				130A225F2D54EDDA00941264 /* AppDelegate.swift in Sources */,
+				13C408C32D5B62B600240275 /* InterestCell.swift in Sources */,
 				130A22612D54EDDA00941264 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
