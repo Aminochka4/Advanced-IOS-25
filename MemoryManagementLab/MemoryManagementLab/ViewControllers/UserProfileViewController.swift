@@ -7,27 +7,59 @@
 
 import UIKit
 
-class UserProfileViewController: UIViewController {
-
-    @IBOutlet weak var UsernameLabel: UILabel!
-    @IBOutlet weak var FollowersLabel: UILabel!
-    @IBOutlet weak var BioLabel: UILabel!
-    @IBOutlet weak var UserImage: UIImageView!
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
+class UserProfileController: UIViewController, ProfileUpdateDelegate {
+    var profileManager: ProfileManager = ProfileManager.shared
+    var imageLoader: ImageLoader = ImageLoader()
     
+    @IBOutlet weak var usernameLabel: UILabel!
+    @IBOutlet weak var followersLabel: UILabel!
+    @IBOutlet weak var bioLabel: UILabel!
+    @IBOutlet weak var profileImageView: UIImageView!
+    
+    override func viewDidLoad() {
+            super.viewDidLoad()
+            profileManager.delegate = self
+            loadProfile()
+        }
+        
+        private func loadProfile() {
+            guard let userProfile = profileManager.getUserProfile() else {
+                print("Ошибка: профиль не найден")
+                return
+            }
+            updateUI(with: userProfile)
+        }
+        
+        private func updateUI(with profile: UserProfile) {
+            usernameLabel.text = profile.username
+            bioLabel.text = profile.bio
+            followersLabel.text = "Followers: \(profile.followers)"
+            
+            if let url = URL(string: profile.profileImageURL) {
+                imageLoader.delegate = self
+                imageLoader.loadImage(url: url)
+            }
+        }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        
+        func profileDidUpdate(_ profile: UserProfile) {
+            updateUI(with: profile)
+        }
+        
+        func profileLoadingError(_ error: Error) {
+            print("Ошибка загрузки профиля:", error.localizedDescription)
+        }
     }
-    */
 
-}
+    extension UserProfileController: ImageLoaderDelegate {
+        func imageLoader(_ loader: ImageLoader, didLoad image: UIImage) {
+            DispatchQueue.main.async {
+                self.profileImageView.image = image
+            }
+        }
+
+        func imageLoader(_ loader: ImageLoader, didFailWith error: Error) {
+            print("Ошибка загрузки изображения:", error.localizedDescription)
+        }
+    }
+

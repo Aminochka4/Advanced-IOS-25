@@ -7,38 +7,45 @@
 
 import UIKit
 
-class FeedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    @IBOutlet weak var tableView: UITableView!
+
+    var feedSystem: FeedSystem = FeedSystem.shared
+    private var posts: [Post] = []
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 100
+        loadFeed()
+    }
+
+    private func loadFeed() {
+        posts = feedSystem.getPosts()
+        tableView.reloadData()
+    }
+
+    // MARK: - TableView Data Source
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return posts.count
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell", for: indexPath)
-        let post = posts[indexPath.row]
-        cell.textLabel?.text = post.content
-        return cell
-    }
-    
+            let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell", for: indexPath)
 
-    @IBOutlet weak var tableView: UITableView!
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        tableView.delegate = self
-        tableView.dataSource = self
+            let post = posts[indexPath.row]
 
+            var content = cell.defaultContentConfiguration()
+            content.text = post.content
+            content.secondaryText = "\(post.author.username)\n❤️ \(post.likes)"
+            content.secondaryTextProperties.color = .gray
+            content.secondaryTextProperties.numberOfLines = 2
 
-        // Do any additional setup after loading the view.
-    }
-    
+            cell.contentConfiguration = content
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+            return cell
+        }
 }
+

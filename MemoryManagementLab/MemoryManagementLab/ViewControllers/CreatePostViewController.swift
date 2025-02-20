@@ -8,25 +8,22 @@
 import UIKit
 
 class CreatePostViewController: UIViewController {
-    @IBOutlet weak var TextField: UITextView!
-    @IBAction func publishPost(_ sender: Any) {
-        print("Post published: \(TextField.text ?? "No text")")
-    }
+    @IBOutlet weak var postTextView: UITextView!
+    private let feedSystem = FeedSystem.shared
+    private var profileManager = ProfileManager.shared
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
-    
 
-    /*
-    // MARK: - Navigation
+    @IBAction func postButtonTapped(_ sender: UIButton) {
+        guard let content = postTextView.text, !content.isEmpty else { return }
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        guard let user = profileManager.getUserProfile() else { return }
+        let newPost = Post(id: UUID(), author: user, content: content, likes: 0)
+
+        feedSystem.addPost(newPost) 
+        dismiss(animated: true, completion: nil)
     }
-    */
-
 }
+
