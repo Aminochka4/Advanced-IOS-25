@@ -1,0 +1,33 @@
+//
+//  UserProfileViewController.swift
+//  MemoryManagementLab
+//
+//  Created by Амина Аманжолова on 20.02.2025.
+//
+
+import UIKit
+
+class UserProfileViewController: UIViewController {
+
+    @IBOutlet weak var UsernameLabel: UILabel!
+    @IBOutlet weak var FollowersLabel: UILabel!
+    @IBOutlet weak var BioLabel: UILabel!
+    @IBOutlet weak var UserImage: UIImageView!
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // Do any additional setup after loading the view.
+    }
+    
+
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+    }
+    */
+
+}

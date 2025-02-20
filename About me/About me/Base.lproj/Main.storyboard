@@ -155,7 +155,7 @@
                                             <constraint firstAttribute="height" constant="113" id="EjZ-Vg-lgq"/>
                                             <constraint firstAttribute="width" constant="241" id="lDW-6Q-ycx"/>
                                         </constraints>
-                                        <string key="text">Main goal in my life is to have a lot of money and just travel with my bf, with my family, with my friends. The goal is to just be a chill.</string>
+                                        <string key="text">Main goal in my life is to have a lot of money and just travel with my bf, with my family, with my friends. The goal is to just be chill.</string>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>

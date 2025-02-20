@@ -1,0 +1,32 @@
+//
+//  CreatePostViewController.swift
+//  MemoryManagementLab
+//
+//  Created by Амина Аманжолова on 20.02.2025.
+//
+
+import UIKit
+
+class CreatePostViewController: UIViewController {
+    @IBOutlet weak var TextField: UITextView!
+    @IBAction func publishPost(_ sender: Any) {
+        print("Post published: \(TextField.text ?? "No text")")
+    }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // Do any additional setup after loading the view.
+    }
+    
+
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+    }
+    */
+
+}
