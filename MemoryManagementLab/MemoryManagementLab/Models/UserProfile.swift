@@ -13,4 +13,21 @@ struct UserProfile {
     let profileImageURL: String
     var bio: String
     var followers: Int
+    
+    // TODO: Implement Hashable
+    // Consider: Which properties should be used for hashing?
+    // Remember: Only use immutable properties
+    func hash(into hasher: inout Hasher) {
+            hasher.combine(id)
+            hasher.combine(username)
+            hasher.combine(profileImageURL)
+    }
+        
+    // TODO: Implement Equatable
+    // Consider: Which properties determine equality?
+    static func == (lhs: UserProfile, rhs: UserProfile) -> Bool {
+        return lhs.id == rhs.id &&
+               lhs.username == rhs.username &&
+               lhs.profileImageURL == rhs.profileImageURL
+    }
 }

@@ -8,6 +8,8 @@
 import Foundation
 
 protocol ProfileUpdateDelegate: AnyObject {
+    // TODO: Consider protocol inheritance requirements
+    // Think: When should we restrict protocol to reference types only?
     func profileDidUpdate(_ profile: UserProfile)
     func profileLoadingError(_ error: Error)
 }
@@ -15,22 +17,29 @@ protocol ProfileUpdateDelegate: AnyObject {
 class ProfileManager {
     static let shared = ProfileManager()
 
+    // TODO: Think about appropriate storage type for active profiles
     private var activeProfiles: [UUID: UserProfile] = [:]
+    
+    // TODO: Consider reference type for delegate
     weak var delegate: ProfileUpdateDelegate?
+    
+    // TODO: Think about reference management in closure
     var onProfileUpdate: ((UserProfile) -> Void)?
 
     private init() {
         let currentUser = UserProfile(
             id: UUID(),
             username: "Amina",
-            profileImageURL: "https://static.vecteezy.com/system/resources/previews/005/544/718/non_2x/profile-icon-design-free-vector.jpg",
-            bio: "Hello, world! I am Amina.",
+            profileImageURL: "https://media.licdn.com/dms/image/v2/D4D03AQEA95YSCwXhQA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1729933185481?e=1745452800&v=beta&t=txcc5LD1NAyq53dldivxPt0m3EIfrCB4hbNcj5KHPJo",
+            bio: "I am just a girl in the world",
             followers: 300
         )
         activeProfiles[currentUser.id] = currentUser
     }
 
     func loadProfile(id: UUID, completion: @escaping (Result<UserProfile, Error>) -> Void) {
+        // TODO: Implement profile loading
+        // Consider: How to avoid retain cycle in completion handler?
         if let profile = activeProfiles[id] {
             completion(.success(profile))
         } else {

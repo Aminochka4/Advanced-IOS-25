@@ -13,6 +13,12 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
     var feedSystem: FeedSystem = FeedSystem.shared
     private var posts: [Post] = []
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        loadFeed()
+    }
+
+
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
@@ -22,12 +28,12 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
         loadFeed()
     }
 
-    private func loadFeed() {
+    func loadFeed() {
         posts = feedSystem.getPosts()
         tableView.reloadData()
     }
 
-    // MARK: - TableView Data Source
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return posts.count
     }
