@@ -9,8 +9,9 @@ import UIKit
 
 class UserProfileController: UIViewController, ProfileUpdateDelegate {
     // TODO: Consider reference type for these properties
+    // Первое является синглтоном, а второе экхемпляром класса ImageLoader(), и так как оба уже сущесвуют в памяти, то остаются strong
     var profileManager: ProfileManager = ProfileManager.shared
-    var imageLoader: ImageLoader = ImageLoader()
+    private var imageLoader: ImageLoader = ImageLoader()
     
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var followersLabel: UILabel!
@@ -34,6 +35,7 @@ class UserProfileController: UIViewController, ProfileUpdateDelegate {
     func setupProfileManager() {
         // TODO: Implement setup
         // Think: What reference type should be used in closure?
+        // В замыкании self используется с weak связью, чтобы снова же избежать retain cycle. Получается если контроллер уничтожится, то замыкание не выполнится.
         profileManager.onProfileUpdate = { [weak self] updatedProfile in
             guard let self = self else { return }
             self.updateProfile(with: updatedProfile)
@@ -43,10 +45,12 @@ class UserProfileController: UIViewController, ProfileUpdateDelegate {
     func updateProfile(with profile: UserProfile) {
         // TODO: Implement profile update
         // Consider: How to handle closure capture list?
-        usernameLabel.text = profile.username
-        bioLabel.text = profile.bio
-        followersLabel.text = "Followers: \(profile.followers)"
-        
+        // Здесь я не использовала замыкание, а просто обновила UI
+        DispatchQueue.main.async {
+            self.usernameLabel.text = profile.username
+            self.bioLabel.text = profile.bio
+            self.followersLabel.text = "\(profile.followers)"
+        }
         if let url = URL(string: profile.profileImageURL) {
             imageLoader.delegate = self
             imageLoader.loadImage(url: url)
@@ -62,6 +66,7 @@ class UserProfileController: UIViewController, ProfileUpdateDelegate {
     }
 }
 
+// Здесь загружается фото в профиле, а при ошибке выводит лог в консоли
 extension UserProfileController: ImageLoaderDelegate {
     func imageLoader(_ loader: ImageLoader, didLoad image: UIImage) {
         DispatchQueue.main.async {

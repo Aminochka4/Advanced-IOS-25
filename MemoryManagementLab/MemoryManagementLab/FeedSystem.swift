@@ -13,16 +13,19 @@ class FeedSystem {
     // TODO: Implement cache storage
     // Consider: Which collection type is best for fast lookup?
     // Requirements: O(1) access time, storing UserProfile objects with UserID keys
+    // Для быстрого доступа подходит Dictionary, так как доступ по ключу занимает O(1)
     private var userCache: [UUID: UserProfile] = [:]
     
     // TODO: Implement feed storage
     // Consider: Which collection type is best for ordered data?
     // Requirements: Maintain post order, frequent insertions at the beginning
+    // Лучше подходит по требованиям linked list, но с небольшими списками как посты массив тоже подходит с O(n) при вставке элементов
     private var feedPosts: [Post] = []
     
     // TODO: Implement hashtag storage
     // Consider: Which collection type is best for unique values?
     // Requirements: Fast lookup, no duplicates
+    // Set подходит, так как вставка и поиск элемента занимает O(1) время и содержит только уникальные элементы, что подходит для хранения хэштегов
     private var hashtags: Set<String> = []
     
     private init() {
@@ -46,6 +49,7 @@ class FeedSystem {
     func addPost(_ post: Post) {
         // TODO: Implement post addition
         // Consider: Which collection operations are most efficient?
+        // Самая эффективная операция здесь - это добавление в userCache O(1), то есть Dictionary
         print("Добавляем пост: \(post.content)")
         feedPosts.insert(post, at: 0)
         
@@ -60,6 +64,7 @@ class FeedSystem {
     func removePost(_ post: Post) {
         // TODO: Implement post removal
         // Consider: Performance implications of removal
+        // Для постов используется массив, и операция удаление поста из массива выполнеятся за О(n) время и это не сильно эффективно если постов очень много. В случае, где постов много эффективнее использовать Linked list, где удаление происходит за O(1)
         if let index = feedPosts.firstIndex(where: { $0.id == post.id }) {
             feedPosts.remove(at: index)
         }

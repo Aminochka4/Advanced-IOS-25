@@ -17,17 +17,15 @@ struct UserProfile {
     // TODO: Implement Hashable
     // Consider: Which properties should be used for hashing?
     // Remember: Only use immutable properties
+    // Хэширование по id достаточно, так как UUID уже обеспечивает уникальность, также она неизменяема в отличии от bio and followers - их для хеширование использовать нельзя
     func hash(into hasher: inout Hasher) {
             hasher.combine(id)
-            hasher.combine(username)
-            hasher.combine(profileImageURL)
     }
         
     // TODO: Implement Equatable
     // Consider: Which properties determine equality?
+    // Тут тоже достаточно сравнить по id, так как она у всех уникальная(UUID)
     static func == (lhs: UserProfile, rhs: UserProfile) -> Bool {
-        return lhs.id == rhs.id &&
-               lhs.username == rhs.username &&
-               lhs.profileImageURL == rhs.profileImageURL
+        return lhs.id == rhs.id
     }
 }
