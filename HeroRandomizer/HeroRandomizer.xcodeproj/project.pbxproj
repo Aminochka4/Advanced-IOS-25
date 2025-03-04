@@ -7,24 +7,24 @@
 	objects = {
 
 /* Begin PBXFileReference section */
-		134C4CE72D744A1B004B3259 /* HeroRandomizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HeroRandomizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		138307BA2D746119000B480E /* HeroRandomizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HeroRandomizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		134C4CF92D744A1D004B3259 /* Exceptions for "HeroRandomizer" folder in "HeroRandomizer" target */ = {
+		138307CC2D74611B000B480E /* Exceptions for "HeroRandomizer" folder in "HeroRandomizer" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
 			);
-			target = 134C4CE62D744A1B004B3259 /* HeroRandomizer */;
+			target = 138307B92D746119000B480E /* HeroRandomizer */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		134C4CE92D744A1B004B3259 /* HeroRandomizer */ = {
+		138307BC2D746119000B480E /* HeroRandomizer */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				134C4CF92D744A1D004B3259 /* Exceptions for "HeroRandomizer" folder in "HeroRandomizer" target */,
+				138307CC2D74611B000B480E /* Exceptions for "HeroRandomizer" folder in "HeroRandomizer" target */,
 			);
 			path = HeroRandomizer;
 			sourceTree = "<group>";
@@ -32,7 +32,7 @@
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		134C4CE42D744A1B004B3259 /* Frameworks */ = {
+		138307B72D746119000B480E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -42,18 +42,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		134C4CDE2D744A1B004B3259 = {
+		138307B12D746119000B480E = {
 			isa = PBXGroup;
 			children = (
-				134C4CE92D744A1B004B3259 /* HeroRandomizer */,
-				134C4CE82D744A1B004B3259 /* Products */,
+				138307BC2D746119000B480E /* HeroRandomizer */,
+				138307BB2D746119000B480E /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		134C4CE82D744A1B004B3259 /* Products */ = {
+		138307BB2D746119000B480E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				134C4CE72D744A1B004B3259 /* HeroRandomizer.app */,
+				138307BA2D746119000B480E /* HeroRandomizer.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -61,64 +61,64 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		134C4CE62D744A1B004B3259 /* HeroRandomizer */ = {
+		138307B92D746119000B480E /* HeroRandomizer */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 134C4CFA2D744A1D004B3259 /* Build configuration list for PBXNativeTarget "HeroRandomizer" */;
+			buildConfigurationList = 138307CD2D74611B000B480E /* Build configuration list for PBXNativeTarget "HeroRandomizer" */;
 			buildPhases = (
-				134C4CE32D744A1B004B3259 /* Sources */,
-				134C4CE42D744A1B004B3259 /* Frameworks */,
-				134C4CE52D744A1B004B3259 /* Resources */,
+				138307B62D746119000B480E /* Sources */,
+				138307B72D746119000B480E /* Frameworks */,
+				138307B82D746119000B480E /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				134C4CE92D744A1B004B3259 /* HeroRandomizer */,
+				138307BC2D746119000B480E /* HeroRandomizer */,
 			);
 			name = HeroRandomizer;
 			packageProductDependencies = (
 			);
 			productName = HeroRandomizer;
-			productReference = 134C4CE72D744A1B004B3259 /* HeroRandomizer.app */;
+			productReference = 138307BA2D746119000B480E /* HeroRandomizer.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		134C4CDF2D744A1B004B3259 /* Project object */ = {
+		138307B22D746119000B480E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1620;
 				LastUpgradeCheck = 1620;
 				TargetAttributes = {
-					134C4CE62D744A1B004B3259 = {
+					138307B92D746119000B480E = {
 						CreatedOnToolsVersion = 16.2;
 					};
 				};
 			};
-			buildConfigurationList = 134C4CE22D744A1B004B3259 /* Build configuration list for PBXProject "HeroRandomizer" */;
+			buildConfigurationList = 138307B52D746119000B480E /* Build configuration list for PBXProject "HeroRandomizer" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = 134C4CDE2D744A1B004B3259;
+			mainGroup = 138307B12D746119000B480E;
 			minimizedProjectReferenceProxies = 1;
 			preferredProjectObjectVersion = 77;
-			productRefGroup = 134C4CE82D744A1B004B3259 /* Products */;
+			productRefGroup = 138307BB2D746119000B480E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				134C4CE62D744A1B004B3259 /* HeroRandomizer */,
+				138307B92D746119000B480E /* HeroRandomizer */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		134C4CE52D744A1B004B3259 /* Resources */ = {
+		138307B82D746119000B480E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -128,7 +128,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		134C4CE32D744A1B004B3259 /* Sources */ = {
+		138307B62D746119000B480E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -138,7 +138,7 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		134C4CFB2D744A1D004B3259 /* Debug */ = {
+		138307CE2D74611B000B480E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -149,7 +149,8 @@
 				INFOPLIST_FILE = HeroRandomizer/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -165,7 +166,7 @@
 			};
 			name = Debug;
 		};
-		134C4CFC2D744A1D004B3259 /* Release */ = {
+		138307CF2D74611B000B480E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -176,7 +177,8 @@
 				INFOPLIST_FILE = HeroRandomizer/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -192,7 +194,7 @@
 			};
 			name = Release;
 		};
-		134C4CFD2D744A1D004B3259 /* Debug */ = {
+		138307D02D74611B000B480E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -255,7 +257,7 @@
 			};
 			name = Debug;
 		};
-		134C4CFE2D744A1D004B3259 /* Release */ = {
+		138307D12D74611B000B480E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -314,25 +316,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		134C4CE22D744A1B004B3259 /* Build configuration list for PBXProject "HeroRandomizer" */ = {
+		138307B52D746119000B480E /* Build configuration list for PBXProject "HeroRandomizer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				134C4CFD2D744A1D004B3259 /* Debug */,
-				134C4CFE2D744A1D004B3259 /* Release */,
+				138307D02D74611B000B480E /* Debug */,
+				138307D12D74611B000B480E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		134C4CFA2D744A1D004B3259 /* Build configuration list for PBXNativeTarget "HeroRandomizer" */ = {
+		138307CD2D74611B000B480E /* Build configuration list for PBXNativeTarget "HeroRandomizer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				134C4CFB2D744A1D004B3259 /* Debug */,
-				134C4CFC2D744A1D004B3259 /* Release */,
+				138307CE2D74611B000B480E /* Debug */,
+				138307CF2D74611B000B480E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 134C4CDF2D744A1B004B3259 /* Project object */;
+	rootObject = 138307B22D746119000B480E /* Project object */;
 }
