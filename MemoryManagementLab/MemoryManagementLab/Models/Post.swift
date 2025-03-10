@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Post {
+struct Post: Hashable, Equatable {
     let id: UUID
     let author: UserProfile
     let content: String

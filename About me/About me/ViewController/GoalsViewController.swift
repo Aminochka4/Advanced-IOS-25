@@ -11,23 +11,23 @@ class GoalsViewController: UIViewController {
 
     @IBOutlet weak var goalImageView: UIImageView!
     @IBOutlet weak var goalLabel: UILabel!
-    @IBOutlet weak var toggleButton: UIButton!  // Подключи кнопку в сториборде!
+    @IBOutlet weak var toggleButton: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        goalImageView.alpha = 0  // Скрыто по умолчанию
+        goalImageView.alpha = 0
         goalLabel.alpha = 0
     }
 
     @IBAction func buttonTouchDown(_ sender: UIButton) {
-        UIView.animate(withDuration: 0.3) {  // Плавное появление
+        UIView.animate(withDuration: 0.3) {
             self.goalImageView.alpha = 1
             self.goalLabel.alpha = 1
         }
     }
 
     @IBAction func buttonTouchUp(_ sender: UIButton) {
-        self.goalImageView.alpha = 0  // Исчезает мгновенно
+        self.goalImageView.alpha = 0  
         self.goalLabel.alpha = 0
     }
 }

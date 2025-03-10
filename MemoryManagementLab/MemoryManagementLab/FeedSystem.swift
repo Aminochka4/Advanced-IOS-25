@@ -50,7 +50,7 @@ class FeedSystem {
         // TODO: Implement post addition
         // Consider: Which collection operations are most efficient?
         // Самая эффективная операция здесь - это добавление в userCache O(1), то есть Dictionary
-        print("Добавляем пост: \(post.content)")
+        print("Добавляется пост: \(post.content)")
         feedPosts.insert(post, at: 0)
         
         if userCache[post.author.id] == nil {
