@@ -1,4 +1,4 @@
-# iOS Development Assignment: HeroApp
+# iOS Development Assignment: Concurrent Weather Data App
 
 ## Project Overview
 I created a weather application that fetch multiple weather data points concurrently from a public weather API `https://home.openweathermap.org/` and display them to the user as each one finishes loading.
